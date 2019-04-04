@@ -1,2 +1,1 @@
-# gabiduncombe.github.io
-HCDE Digital Fabrication Repository
+HCDE 598 Special Topics Digital Fabrication
