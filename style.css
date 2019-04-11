@@ -37,14 +37,14 @@ a {
 }
 
 .assignment a {
-    color: #000;
+    color: #000000;
     text-decoration: none;
 }
 
 .assignment a:hover {
-  background: #F06;
-  color: #F06;
-  text-decoration: none;
+    background: #3AA7E8;
+    color: #3AA7E8;
+    text-decoration: none;
 }
 
 
