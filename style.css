@@ -17,7 +17,7 @@ a {
 	background: #fff;
 	color: #000000;
 	height: 400px;
-	padding: 30px 30px 75px;
+	padding: 30px 30px 30px 30px;
 }
 
 .header h1 {
@@ -70,4 +70,12 @@ a {
   background: #F06;
   color: #FFF;
   text-decoration: none;
+}
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
 }
