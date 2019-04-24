@@ -20,16 +20,24 @@
 		<p> Here's the  <a href= "https://github.com/gabiduncombe/gabiduncombe.github.io/blob/master/project_source_files/assignment1/monkey_v3.ai" >source file</a>. </p>
 		<p> I started with the Illustrator file I created in Assignment 1 - the outline of the monkey without any of the notches cut into the hands and feet. I opened that Illustrator file directly in Rhino - and the outline appeared withiout me having to do any conversions. </p>
 		<p> I started by scaling up the monkey outline to around 100mm tall - I didn't want the pieces to end up too tiny. Then, I needed to parameterize the notches in the hands and feet using Grasshopper. </p>
-		<p> </p>
-			
-			
-		<p><img src="imgs/monkeys_in_cutter_1.JPG" height=300></a></p>
-		<p><img src="imgs/monkeys_in_cutter_2.JPG" height=300></a></p>
-		<p> Finally, I had my monkeys - and they fit together perfectly! </p>
-		<br> </br>
-		<p><img src="imgs/monkey_finished_2.JPG" height=300 class=rotate90></a></p>
-		<br> </br>
-		<p>Thanks to Brooks Robinson for showing me how to insert a link into this page and Tanya Wang for helping me get up to speed on the laser cutter! </p>
+		<p>I started by creating a rectangle shape in Grasshopper with a number slider representing the width of the notch. I also created a parameter for height but this didn't need to be variable, so I kept it fixed.</p>
+		<p><img src="imgs/Assignment2/1_RectangleCreation.PNG" width=700></a></p>
+		<p>Next, I needed to create 4 of the rectangles, and put them in the correct position and in the correct rotation relative to the monkey hands. I did this with Rotate and Move. A couple things I learned - for rotation, I needed to right-click on 'angle' and make sure it was set to 'degrees'. I also found that rotation worked better before move, when things were closer to the (0,0) point that they rotated around. I couldn't figure out how to rotate the rectangle around the center point instead. I did the same thing for each of the 4 different rectangular notches since they all had different rotation angles and position vectors. </p>
+		<p><img src="imgs/Assignment2/2_RectangleRotationandMove.PNG" width=700></a></p>
+		<p> Next up - I used Merge to group all the rectangles together into one collection of curves. Then, I set a curve to the outline of the monkey that I imported at the beginning ("Body"). I used Region Difference to trim the notches out of the monkey outline.</p>
+		<p><img src="imgs/Assignment2/3_MergeandRDiff.PNG" width=700></a></p>
+		<p> I wanted to create an array of 12 monkeys so I wouldn't have to do it in Illustrator, so I used Linear Array. I created a parmeter for the spacing between all of them, as well as the number of duplications. </p>
+		<p><img src="imgs/Assignment2/4_LinearArray.PNG" width=700></a></p>
+		<p> I created two rows of 6 monkeys, then merged them together. Here's what it looked like:</p>
+		<p><img src="imgs/Assignment2/5_Result.PNG" width=700></a></p>
+		<p> I measured my cardboard width, length, and height and adjusted the 'notch width' parameter to be .2mm less than the cardbord width - to provide a snug fit. I exported the file per Josh's provided guidance to .DXF and brought it into Illustrator, making sure I set the units to millimeters in the import dialog box. It worked great! I adjusted the stroke width to .001 and sent it to the Epilog - using the settings of Power = 100%, Speed = 25%, Frequency = 50%. </p>
+		<p><img src="imgs/Assignment2/6_Material1.GIF" width=700></a></p>
+		<p><img src="imgs/Assignment2/7_Monkeys.JPG" width=700></a></p>
+		<p> These settings worked great, and I had my first batch done. </p>
+		<p> I went through the same steps for my second batch of a different cardboard material but the ".2mm less" wasn't a tight enough fit - I think because the cardboard was more compressible. I was out of cardboard from that material at that point but found a scrap that was .2mm thicker - so I had a difference of .4mm between the notch width and the actual cardboard width. I tried again with these settings and the fit was perfect.	</p>
+		<p><img src="imgs/Assignment2/8_Material2.JPG" width=700></a></p>
+		<p><img src="imgs/Assignment2/9_Material2.GIF" width=700></a></p>	
+		<p>Thanks to Emma Meersman and Elizabeth Quepons for some Grasshopper support, Leo for the great web documentation that gave me the inspiration to make my array in Grasshopper using Linear Array, and Kim Dzubinski for the moral support! </p>
         </div>
     </body>
 </html>
