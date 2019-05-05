@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Assignment 3</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+          <h1>Assignment 4: Hinge</h1>
+          <p>
+          <p></a><img src="imgs/Assignment4/finalhinge_square.jpg" width="300" alt=""/></p>
+            </p>
+		<p>I decided for this assignment that I wanted to make a hinge - and I thought it would be fun to try to 3D print the entire hinge in one piece... no assembly required!		</p>
+		<p>Here's the <a href= "https://cad.onshape.com/documents/5512d9d383e93951caf629b2/w/5dac86d5148a0e769264a46d/e/40f84c84c8dc0762be50045e">link to the Onshape file</a>. </p>
+		<p>First, I started by designing the hinge on paper. I watned it  to have 6 screw holes - 3 on each side - and 3 knuckles. 
+		<p>I started in Onshape by creating a sketch for the male leaf. I decided to create the lower half of it and then mirror it vertically to complete the design. I created a rectangle, a circle for screws (measured for a standard M5 screw with 4mm drill size), and a half-circle (that would be reflected into a full cicle) for another screw.         
+		<p><img src="imgs/Assignment4/1.jpg" width="700" alt=""/>                
+		<p>Once I had that part done, I extruded it to be 5mm tall. 
+		<p><img src="imgs/Assignment4/2.JPG" width="700" alt=""/>        
+		<p>Then, I made the sketch for the knuckle. This evolved over the course of the design but it started as a rectangle with a half-circle on top. 
+		<p><img src="imgs/Assignment4/3.JPG" width="700" alt=""/>                
+		<p>I extruded the knuckle to extend all the way to the end of the leaf - I had to use &quot;Add&quot; rather than &quot;New&quot; otherwise I had intersection issues.
+		<p><img src="imgs/Assignment4/4.JPG" width="700" alt=""/>
+		  <p>Then I needed to cut out notches / knuckles. I made a sketch for that (simple rectangle) and used Extrude to remove it - I used &quot;Remove&quot; and &quot;Solid&quot; as the settings. 
+		  <p><img src="imgs/Assignment4/5.JPG" width="700" alt=""/>                    
+		  <p><img src="imgs/Assignment4/6.JPG" width="700" alt=""/>                    
+		  <p>After that, I needed to make the pin that the hinge would rotate around. I did that with a circle that I extruded all the way from one end of the leaf to the other (using &quot;Add&quot; and &quot;Solid&quot; as the settings).
+	      <p><img src="imgs/Assignment4/7.JPG" width="700" alt=""/>                    
+	      <p><img src="imgs/Assignment4/8.JPG" width="700" alt=""/>                    
+	      <p>Then it was time to mirror the leaf so it took on the full shape. I used &quot;Reflect&quot; to do that. 
+          <p><img src="imgs/Assignment4/9.JPG" width="700" alt=""/>                    
+          <p>Next I created the female leaf, following the same process for the beginning of the male leaf. 
+		  <p><img src="imgs/Assignment4/10.JPG" width="700" alt=""/>                    
+		  <p><img src="imgs/Assignment4/11.JPG" width="700" alt=""/>                    
+		  <p>Once I had the female knuckle though, I needed to extrude it from the end of the 1st male knuckle to the beginning of the 2nd male knuckle - so I could eventually create a gap in between them and prevent fusion. I used &quot;Second End Position&quot; in Extrude and it allowed me to do that successfully. 
+		  <p><img src="imgs/Assignment4/12.JPG" width="700" alt=""/>                    
+		  <p>Then I reflected the leaf so it matched the other one. 
+		<p>Next I wanted to chamfer the screw holes, so I used a distance of 2.5mm and a 45* angle, based on some resources I found online about the design of the M5 screws.
+		<p>I did all the initial work with no tolerances/wiggle room, which obviously would have posed a problem when I 3D printed it, as everything would be fused together.
+        
+		<p>So, I needed to adjust the openings between all the parts so I started by bringing everything .2mm apart. I also had to redesign the knuckles a bit just to make them line up correctly after being shifted around.
+		<p>I also filleted the edge of the female leaf closest to the knuckle so it would be a smoother motion.
+		<p><img src="imgs/Assignment4/13.JPG" width="700" alt=""/>        
+		<p>I tested my design by creating an assembly and adding a revolute mate. 
+		<p><img src="imgs/Assignment4/14.JPG" width="700" alt=""/>
+		<p><img src="imgs/Assignment4/15.JPG" width="700" alt=""/>                
+		<p><img src="imgs/Assignment4/16.JPG" width="700" alt=""/>                
+		  <p>Then it was time to print!
+		<p>I used the following settings, which gave me a *tiny* bit of support material inside the hinge that should be easy to break apart. <p><img src="imgs/Assignment4/CuraSettings.png" width="700" alt=""/>
+		<p>I ran a print but after the first layer it was clear that the parts were going to be all fused together. 
+		<p><img src="imgs/Assignment4/IMG_3198.JPG" width="700" alt=""/>                
+		<p>I went back to the Onshape file and adjusted the gaps to be .4mm. Printed again but after a few layers it still seemed too tight. 
+		<p>.6mm gaps seemed to do the trick. 
+		<p>However I had a snapping issue so I had to thicken up the wall of the hinge a bit by making the pin and pin hole smaller. 
+		<p><img src="imgs/Assignment4/IMG_3199.JPG" width="700" alt=""/>                
+		<p>I printed again and was able to get the hingle moving, which was great!
+		<p>The small amount of support material inside the hinge broke easily.         
+		<p>But the hinge didn't go all the way closed. I realized I needed to fillet the other side, so I filleted the male leaf on the side closes to the pin. 
+		<p><img src="imgs/Assignment4/IMG_3200.JPG" width="700" alt=""/>                
+		<p><img src="imgs/Assignment4/IMG_3201.JPG" width="700" alt=""/>                
+		<p><img src="imgs/Assignment4/FHKR6333.GIF" width="350" alt=""/>                
+		<p>Printed again and it worked great! Now I have an awesome and smooth hinge.                
+		<p><img src="imgs/Assignment4/IMG_3204.JPG" width="700" alt=""/>                
+		<p><img src="imgs/Assignment4/IMG_3205.JPG" width="700" alt=""/>                
+		<p><img src="imgs/Assignment4/XHPA3344.GIF" width="350" alt=""/>        
+		<p>Thanks to Josh for the helpful tutorial on using Onshape.</p>
+        </div>
+    </body>
+</html>
