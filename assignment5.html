@@ -1,0 +1,87 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Assignment 3</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+          <h1>Assignment 4: Star Box          </h1>
+          <p></a><img src="imgs/Assignment5/final_square.jpg" width="300" alt=""/></p>
+            </p>
+		<p>I was feeling inspired by the copper material and wanted to create something cool that I would be excited to put on my shelf, so I designed a star box. <a href="assignment4.html"></a></p>
+		<p>Here's the <a href= "https://cad.onshape.com/documents/a6ccea17d15cc8b2e9fa98cb/w/56f2131c16a7cbccfd34bf51/e/135f8f3f64577d1b083383f1">link to the Onshape file</a>.</p>
+
+		<p>Here's a <a href= "https://cad.onshape.com/documents/5512d9d383e93951caf629b2/w/5dac86d5148a0e769264a46d/e/40f84c84c8dc0762be50045e">link to the other project files</a>, including the constellation .ai and .dxf files, Gerber exports, and Onshape .dxf exports.</p>
+		
+		<p>I started with some initial sketches of a design. I thought it would be fun to use the CNC to actually mill a circuit rather than just edge cut pieces, so I decided to incorporate a light source and simple circuit into the design. 
+		<p>I started with some initial sketches and ideas. I decided that I wanted to put different constellations into each face of the box. 
+		<p><img src="imgs/Assignment5/IMG_3292.JPG" width="700" alt=""/>        
+		<p>My husband is an electrical engineer and gave some guidance on what parts to order to create an LED light switch and how to design the circuit so the light would actually turn on!
+		<p>I ordered a battery holder, a LED, a  small switch, and a coin cell CR-232 battery. 
+		<p>I started in Onshape doing the initial design of the box. Initially, I designed everything without any tolerances. I went back later and revised (a few times, after a few CNC mills that didn't get me the fit I needed). 
+		<p>The linear array tool was very helpful here in creating all the different notches that I needed. 
+		<p><img src="imgs/Assignment5/1.PNG" width="700" alt=""/>
+		<p>A little bit of extrude got me an approxmiation of the thickness of the FR1 materia.
+		<p><img src="imgs/Assignment5/2.PNG" width="700"  alt=""/></p>
+		<p>I knew from our lecture that I couldn't mill inside corners, so I created holes/dogbones on every inside corner. I originally made the holes exactly 1/32&quot; but later ran into issues in Bantam saying it couldn't cut the holes, so I expanded them to be 1mm, which seemed to be the minimum size that Bantam would allow.</p>
+		<p><img src="imgs/Assignment5/3.PNG" width="700"  alt=""/></p>
+		<p>I used transform/part copy to create the other sides of the box.</p>
+		<p><img src="imgs/Assignment5/4.PNG" width="700"  alt=""/></p>
+		<p>Then, I made the top of the box, which was the same type of piece that was going to go near the bottom and hold the LED, battery, and switch. Again, linear array was very helpful here. </p>
+		<p><img src="imgs/Assignment5/5.PNG" width="700"  alt=""/></p>
+		<p>Now that I had the box fitting together digitally, it was type for my constellations. I used Illustrator to essentially trace over existing reference images of constellations. I originally started by doing this in Onshape but it was really inefficient at creating artistic and more organic designs, which is why I switched to Illustrator.</p>
+		<p><img src="imgs/Assignment5/Illustrator0.PNG" width="700" alt=""/></p>
+		<p>I made the main star size 3.25mm diameter, the small stars 1.5mm, and the connecting lines as rounded rectangles with a width of 1/32&quot; and a corner radius of 1/64&quot;. I thought that it would work perfectly with the drill bit size, but I had to adjust this later when Bantam threw errors on the connecting lines. I did the adjustments in Onshape, though, using offset to adjust them all to be .2mm larger, then deleting the original curves. This was annoying and time-consuming, but not too bad in the scheme of things.</p>
+		<p><img src="imgs/Assignment5/illustrator1.PNG" width="700" alt=""/></p>
+		<p>When I had all the constellations, I brought them in as DXFs and placed them on each of the faces of the box in a sketch, then extruded them (&quot;remove&quot;) to cut the shapes out.</p>
+		<p><img src="imgs/Assignment5/6.PNG" width="700"  alt=""/></p>
+		<p>I also needed to account for placement of the battery holder and the light switch on the bottom of the box. To do this, I modeled them very crudely so I had a good sense of their overall length, width, height, and pin placement. </p>
+		<p><img src="imgs/Assignment5/8.PNG" width="700"  alt=""/></p>
+		<p><img src="imgs/Assignment5/7.PNG" width="700" alt=""/></p>
+		<p>I placed them in the right spot then created rectangles around each of the pins and filleted the corners to create slots. This was another thing I had to adjust after bringing the files into Bantam. Overall, had to resize the slots to be larger so they could be milled. </p>
+		<p>Next, it was time to design the actual circuit in Kicad. I brought the bottom piece into KiCad through the method in the tutorial. </p>
+		<p>My husband explained which connections had to happen but I needed to actually draw lines to mill the traces. This ended up being more complicated than I was expecting. </p>
+		<p>I initially tried to just use &quot;route tracks&quot; in the F.Cu layer, but I kept getting blocked... essentially it didn't want me to draw over the edge cuts. </p>
+		<p>I made a workaround by placing footprints over the pin holes. I created footprints that were essentially oval pads of a certain width and height positioned at the right spots. And I found a footprint in the library for the LED part. However, KiCad was still unhappy connecting footprints when they were over the edge cuts so I basically scootched them over until they were off the edge cuts, routed the tracks, and then moved them back on top of the edge cuts. This seemed to work okay, though it took about an hour to get the workflow figured out. </p>
+		<p><img src="imgs/Assignment5/pcb.PNG" width="700" alt=""/></p>
+		<p>I also had to do a bit of back and forth with Bantam to get it happy enough with the footprint sizes to actually mill it correctly, but I was able to get it to a happy place. </p>
+		<p>I made sure to include the F.Cut and Edge.Cuts layers when I plotted the bottom piece and brought it into Bantam with both layers (and I did NOT uncheck traces - only for this specific piece. </p>
+		<p><img src="imgs/Assignment5/bantam2.PNG" width="350" alt=""/></p>
+		<p><img src="imgs/Assignment5/bantam3.PNG" width="700" alt=""/></p>
+		<p>So all the parts seemed to be working now. I was ready to start milling!</p>
+		<p>I kicked off one of the side pieces first. Seemed to go well and I was excited! But then I tested the holes in the bottom by pushing the corner of a piece of FR-1 into it, and it was too tight. Ugh. I adjusted in OnShape and milled a second side piece to test the edge fit. Took 25 minutes for each side piece.</p>
+		<p>The bottom hole worked well that time, but the edges were too tight to fit. They came out way different in size from the measurements I had in OnShape, which was weird. </p>
+		<p><img src="imgs/Assignment5/IMG_3271.JPG" width="700" alt=""/></p>
+		<p>I made further adjustments in OnShape and started another side piece. Another 25 mins. </p>
+		<p>These dimensions worked! The fit was VERY snug, which was was I wanted So I had my settings and was good to go on all of them. </p>
+		<p><img src="imgs/Assignment5/fit1.PNG" width="406" height="548" alt=""/></p>
+		<p><img src="imgs/Assignment5/bantam1.PNG" width="700" alt=""/></p>
+		<p>From there, I was able to mill without too much trouble, except for once when I think one of the plates slipped so the bit was dragging from point to point. My only major pain point here was just timing. It took around 25 minutes for each face.</p>
+		<p><img src="imgs/Assignment5/IMG_3277.JPG" width="700" alt=""/></p>
+		<p>I also needed to actually attach the light switch components into the bottom piece. </p>
+		<p>They slipped into the slots perfectly, and my husband helped me solder the pieces in place since I hadn't ever soldered before!</p>
+		<p><img src="imgs/Assignment5/IMG_3268.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment5/IMG_3269.JPG" width="700" alt=""/></p>
+		<p>Soldered up and ready to go into the box!</p>
+		<p><img src="imgs/Assignment5/IMG_3280.JPG" width="700" alt=""/></p>
+		<p>And the light switch worked, which was SUPER exciting!</p>
+		<p><img src="imgs/Assignment5/AZOO3647.GIF" width="180" height="320" alt=""/></p>
+		<p>Then, I just had to put all pieces together. Everything fit really tightly, which made it take a bit of time to get every piece connected and flush. I was worried for a bit that I still had the tolerances too tight but eventually everything pressed into place. </p>
+		<p>And I had an awesome star box, that I am really excited about and proud to display. </p>
+		<p><img src="imgs/Assignment5/BEGB5646.GIF" width="180" height="320" alt=""/></p>
+		<p><img src="imgs/Assignment5/stars.PNG" width="700" alt=""/></p>
+		<p>Plus, it looks even better at night with the light on. </p>
+		<p><img src="imgs/Assignment5/IMG_E3288.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment5/IMG_E3287.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment5/DHIX0738.GIF" width="300" alt=""/></p>
+		<p>Thanks to Josh for the helpful tutorial on using Onshape and Hannah N. for helping me figure out how to publically share the link to the Onshape file!</p>
+        </div>
+    </body>
+</html>
