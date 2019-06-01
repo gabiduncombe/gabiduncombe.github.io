@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+
+        <title>Assignment 7</title> 
+
+        <link href="style.css" media="screen" rel="stylesheet" type="text/css" />
+
+    </head> 
+    <body> 
+
+        <div class="header">
+          <h1>Assignment 8: Final Project</h1>
+    <p></a><img src="imgs/Assignment8/finalsquare.jpg" width="300" alt=""/></p>
+          <p><strong>Concept / References: </strong></p>
+          <p>For my final project, I want to create a poseable mannequin toy.</p>
+		<p>I was inspired by the work of Rob Ives and have decided to try to adapt his concept (without using any of his source files). Here's a <a href= "https://notes.robives.com/finished-first-prototype/">blog post</a> where he details some of his work that gave me the inspiration!</p>
+		<p>Here are some of his iterations: </p>
+	<p>Here's my initial concept sketch:</p>
+		<p><img src="imgs/Assignment7/IMG_3645.JPG" width="600" alt=""/></p>
+		<p><strong>Process</strong></p>
+		<p>I started by creating the body parts in Illustrator,	since	I found have found Illustrator to be the easiest place to make more organic shapes. </p>
+		<p>I created all the different components that I would need to laser cut  (using some of Rob Ives' work for reference) and aligned them all to fit on a 12&quot;x12&quot; plywood sheet (1/8&quot; thick). </p>
+		<p><img src="imgs/Assignment8/Illustrator.PNG" width="700" alt=""/></p>
+		<p>I used the Epilog laser cutter at the Mill to cut all the different components. </p>
+		<p>I used the recommended settings of: Speed = 10%, Power = 100%, Frequency = 50%. Those settings were perfect!</p>
+		<p>One thing I forgot to account for: the size of the holes of the grate in the laser cutting bed. I had some pieces fall right through so I had to cut a few different versions to make sure I had a complete set of parts. </p>
+		<p><img src="imgs/Assignment8/IMG_3562.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/IMG_3565.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/IMG_3569.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/IMG_3570.JPG" width="700"  alt=""/></p>
+		<p>Next, it was time to 3D print the ball joints!</p>
+		<p>I designed them in Rhino using Grasshopper, so I would be able to easily adjust the inner cylinder diameter to work with the dowels - and easily adjust the outer sphere size to give the right amount of friction with the laser-cut parts.</p>
+		<p><img src="imgs/Assignment8/Grasshopper.PNG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/Rhino.PNG" width="700" alt=""/></p>
+		<p>After a bit of experimentation and test prints to figure out the best settings, I used the following settings on the 3D printer. Note: 99% concentric infill.</p>
+		<p>The nice thing about these parts was they were so small they only took 10-15 mins to print. </p>
+		<p><img src="imgs/Assignment8/CuraSettings.PNG" width="700" alt=""/></p>
+	<p>I needed to get the actual ball joint dimensions correct, so I ran through a few versions of adjustments to get everything at the dimensions I wanted. </p>
+	<p>Final dimensions:  inner cylinder radius = 1.75mm, outer sphere diameter = 8.35mm</p>
+	<p><img src="imgs/Assignment8/GBBZ5565.GIF" width="350" alt=""/></p>
+	<p><img src="imgs/Assignment8/IMG_3559.JPG" width="700" alt=""/></p>
+	<p>Once I had all the dimensions worked out, I needed to 3D print 16 ball joints. I tried printing them all at once but got spaghetti :( </p>
+	<p><img src="imgs/Assignment8/spaghetti3.PNG" width="700" alt=""/></p>
+	<p><img src="imgs/Assignment8/spaghetti1.PNG" width="700" alt=""/></p>
+		<p>Oops! I ended up printing them one at a time.</p>
+		<p>Once they were all 3D printed, I needed to start gluing pieces together. I started by gluing each body part together (except for the top layer). I used clamps to make sure things were given the right amount of pressue as the glue dried. </p>
+		<p><img src="imgs/Assignment8/IMG_3575.JPG" width="700" alt=""/></p>
+		<p>Then, I glued dowels into all of the ball joints. Next, I started putting the ball joints into the sockets and gluing the top layer on to hold them in place. I used clamps again here to get the right amount of pressure while the glue dried.</p>
+		<p><img src="imgs/Assignment8/IMG_3617.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/IMG_3622.JPG" width="700" alt=""/></p>
+		<p>Then I laid out the skeleton.</p>
+
+		<p><img src="imgs/Assignment8/skeleton.PNG" width="700" alt=""/></p>
+		<p>Next, I started the process of cutting all the dowels and gluing them into the right slots with superglue.</p>
+		<p>Slowly but surely, the man started coming together. </p>
+		<p><img src="imgs/Assignment8/IMG_3641.JPG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/man.PNG" width="700" alt=""/></p>
+		<p><img src="imgs/Assignment8/IMG_3643.JPG" width="700" alt=""/>]</p>
+		<p>And then he was all done! Ready to be posed!</p>
+		<p><img src="imgs/Assignment8/pose1.PNG" width="702" height="929" alt=""/></p>
+		<p><img src="imgs/Assignment8/pose2.PNG" width="685" height="935" alt=""/></p>
+		<p><img src="imgs/Assignment8/pose3.PNG" width="697" height="945" alt=""/></p>
+		<p><img src="imgs/Assignment8/pose4.PNG" width="696" height="937" alt=""/></p>
+		<p><img src="imgs/Assignment8/pose5.PNG" width="695" height="940" alt=""/></p>
+		<p><img src="imgs/Assignment8/IMG_3660.JPG" width="700"  alt=""/></p>
+		<p><strong>Techniques Used:</strong></p>
+		<p>Laser Cutting</p>
+		<p>Parametric CAD</p>
+		<p>3D Printing</p>
+		<p>Moving Parts		</p>
+		<p>Stock Parts		</p>
+		<p><strong>Bill of Materials:</strong></p>
+		<p>(12) 3mm wooden dowels (Amazon)</p>
+        <p>(2) 3mm [1/8&quot;] 12&quot;x12&quot; plywood sheets (Amazon)</p>
+        <p>Wood glue (Lowe's) </p>
+        <p>Gorilla glue (Lowe's)</p>
+        <p>Assorted clamps (Lowe's)</p>
+        <p>PLA filament for 3D printing (Amazon)</p>
+        <p><strong>Source Files:</strong></p>
+        <p>Here's a link to <a href="https://github.com/gabiduncombe/gabiduncombe.github.io/tree/master/project_source_files/assignment6">the source files.</a></p>
+    </body>
+</html>
